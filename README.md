@@ -9,7 +9,6 @@ Uma API RESTful desenvolvida em **Django** e **Django REST Framework** para gere
 - **Python**: Linguagem de programação principal.
 - **SQLite**: Banco de dados utilizado em desenvolvimento.
 - **Django Admin**: Interface administrativa nativa do Django.
-- **Markdown**: Para documentação (`documentos.md`).
 
 ---
 
@@ -68,9 +67,9 @@ filme-api/
 │   ├── urls.py
 │   └── views.py
 │
-├── manage.py              # Gerenciador de comandos do Django
-├── requirements.txt       # Dependências do projeto
-├── requirements_dev.txt   # Dependências para ambiente de desenvolvimento
+├── manage.py              
+├── requirements.txt      
+├── requirements_dev.txt  
 ```
 
 ---
