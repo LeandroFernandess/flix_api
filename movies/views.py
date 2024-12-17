@@ -1,3 +1,9 @@
+"""
+Este módulo define as visualizações relacionadas aos filmes. Inclui classes
+para criação, listagem, detalhamento, atualização, exclusão de filmes e
+estatísticas de filmes.
+"""
+
 from django.db.models import Count, Avg
 from rest_framework import generics, views, response, status
 from rest_framework.permissions import IsAuthenticated
@@ -8,35 +14,40 @@ from reviews.models import Review
 
 
 class MovieCreateListView(generics.ListCreateAPIView):
+    """View para criar e listar filmes."""
 
     permission_classes = (IsAuthenticated, GlobalDefaultPermissions)
     queryset = Movie.objects.all()
     serializer_class = MovieModelSerializer
 
     def get_serializer_class(self):
+        """Retorna o serializer apropriado dependendo do método HTTP."""
         if self.request.method == "GET":
             return MovieListDetailSerializer
         return MovieModelSerializer
 
 
 class MovieRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    """View para detalhar, atualizar e excluir filmes."""
 
     permission_classes = (IsAuthenticated, GlobalDefaultPermissions)
     queryset = Movie.objects.all()
 
     def get_serializer_class(self):
+        """Retorna o serializer apropriado dependendo do método HTTP."""
         if self.request.method == "GET":
             return MovieListDetailSerializer
         return MovieModelSerializer
 
 
 class MovieStatsView(views.APIView):
+    """View para exibir estatísticas dos filmes."""
 
     permission_classes = (IsAuthenticated, GlobalDefaultPermissions)
     queryset = Movie.objects.all()
 
     def get(self, request):
-
+        """Retorna as estatísticas dos filmes."""
         total_movies = self.queryset.count()
         movies_by_genre = self.queryset.values("genre__name").annotate(
             count=Count("id")

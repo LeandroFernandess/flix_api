@@ -1,18 +1,8 @@
 """
-URL configuration for app project.
+Configuração de URLs para o projeto Django.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+Define os padrões de URL para o projeto, incluindo rotas para o administrador,
+bem como endpoints de várias aplicações.
 """
 
 from django.contrib import admin

@@ -1,3 +1,9 @@
+"""
+Este módulo define as rotas de URL para as operações do modelo Review.
+
+Permite criar, listar, recuperar, atualizar e excluir instâncias de Review.
+"""
+
 from django.urls import path
 from . import views
 
