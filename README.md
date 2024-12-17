@@ -17,7 +17,7 @@ Uma API RESTful desenvolvida em **Django** e **Django REST Framework** para gere
 A estrutura do projeto está organizada da seguinte forma:
 
 ```bash
-filme-api/
+flix-api/
 ├── actors/
 │   ├── migrations/
 │   ├── __init__.py
